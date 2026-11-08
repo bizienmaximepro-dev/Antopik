@@ -3,12 +3,32 @@ import random
 import tkinter as tk
 from pathlib import Path
 
-LESSONS_FILE = Path(__file__).parent / "lessons.json"
+LESSONS_DIR = Path(__file__).parent / "lessons"
 REFRESH_INTERVAL_MS = 60 * 60 * 1000  # 1 hour
 BG = "#1c1c1e"
 ACCENT = "#4cc9f0"
 
-cards = json.loads(LESSONS_FILE.read_text(encoding="utf-8"))
+# NEW: one color per category
+CATEGORY_COLORS = {
+    "Vocabulary": "#4cc9f0",
+    "Key expressions": "#f72585",
+    "Grammar": "#f9c74f",
+    "Culture": "#90be6d",
+}
+DEFAULT_CATEGORY_COLOR = "#a0a0a0"
+
+
+def load_cards():
+    all_cards = []
+    for file in sorted(LESSONS_DIR.glob("*.json")):
+        category = file.stem.replace("_", " ").capitalize()  # key_expressions -> Key expressions
+        for card in json.loads(file.read_text(encoding="utf-8")):
+            card.setdefault("category", category)
+            all_cards.append(card)
+    return all_cards
+
+
+cards = load_cards()
 current = None
 
 root = tk.Tk()
@@ -17,6 +37,10 @@ root.overrideredirect(True)          # no title bar
 root.attributes("-topmost", True)    # always on top
 root.configure(bg=BG)
 root.geometry("+40+40")              # screen position
+
+# NEW: category label, packed BEFORE the other labels so it sits on top
+category_label = tk.Label(root, font=("Helvetica", 10, "bold"), bg=BG)
+category_label.pack(padx=20, pady=(10, 0))
 
 korean_label = tk.Label(root, font=("Apple SD Gothic Neo", 32, "bold"), fg="white", bg=BG)
 romanization_label = tk.Label(root, font=("Helvetica", 14, "italic"), fg="gray", bg=BG)
@@ -28,6 +52,9 @@ for label in (korean_label, romanization_label, meaning_label):
 def next_word():
     global current
     current = random.choice(cards)
+    category = current.get("category", "")
+    category_label.config(text=category.upper(),
+                          fg=CATEGORY_COLORS.get(category, DEFAULT_CATEGORY_COLOR))
     korean_label.config(text=current["korean"])
     romanization_label.config(text=current["romanization"])
     meaning_label.config(text=current["meaning"])
@@ -52,9 +79,16 @@ def open_lesson(_event=None):
     win.attributes("-topmost", True)
     win.bind("<Escape>", lambda e: win.destroy())
 
-    # Header
+    # NEW: category badge at the top of the card
+    category = card.get("category", "")
+    if category:
+        color = CATEGORY_COLORS.get(category, DEFAULT_CATEGORY_COLOR)
+        tk.Label(win, text=category.upper(), font=("Helvetica", 11, "bold"),
+                 fg=BG, bg=color, padx=12, pady=3).pack(pady=(20, 0))
+
+    # Header (pady changed from (20, 0) to (10, 0))
     tk.Label(win, text=card["korean"], font=("Apple SD Gothic Neo", 40, "bold"),
-             fg="white", bg=BG).pack(padx=30, pady=(20, 0))
+             fg="white", bg=BG).pack(padx=30, pady=(10, 0))
     tk.Label(win, text=f'{card["romanization"]}  ·  {card["meaning"]}',
              font=("Helvetica", 16), fg=ACCENT, bg=BG).pack(pady=(0, 5))
 
@@ -80,6 +114,7 @@ def open_lesson(_event=None):
                  bg=BG, wraplength=420, justify="left").pack(padx=30, pady=(8, 0), anchor="w")
 
     tk.Button(win, text="Close (Esc)", command=win.destroy).pack(pady=20)
+
 
 menu = tk.Menu(root, tearoff=0)
 menu.add_command(label="Next word", command=next_word)

@@ -1,0 +1,23 @@
+[
+  {
+    "category": "Vocabulary",
+    "korean": "물",
+    "romanization": "mul",
+    "meaning": "water",
+    "explanation": "Basic, very common word. It combines with other nouns: 물고기 (fish, literally 'water-animal').",
+    "examples": [
+      { "korean": "물 주세요", "english": "Water, please" },
+      { "korean": "물을 마셔요", "english": "I drink water" }
+    ]
+  },
+  {
+    "category": "Vocabulary",
+    "korean": "학교",
+    "romanization": "hakgyo",
+    "meaning": "school",
+    "explanation": "Sino-Korean word: 학 (study) + 교 (teaching). The suffix 교 appears in many words related to education.",
+    "examples": [
+      { "korean": "학교에 가요", "english": "I go to school" }
+    ]
+  }
+]

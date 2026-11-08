@@ -1,5 +1,6 @@
 [
   {
+    "category": "Vocabulary",
     "korean": "물",
     "romanization": "mul",
     "meaning": "water",
@@ -10,6 +11,7 @@
     ]
   },
   {
+    "category": "Vocabulary",
     "korean": "학교",
     "romanization": "hakgyo",
     "meaning": "school",

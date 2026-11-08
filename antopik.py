@@ -4,11 +4,11 @@ import tkinter as tk
 from pathlib import Path
 
 LESSONS_DIR = Path(__file__).parent / "lessons"
+PROGRESS_FILE = Path(__file__).parent / "progress.json"  # NEW
 REFRESH_INTERVAL_MS = 60 * 60 * 1000  # 1 hour
 BG = "#1c1c1e"
 ACCENT = "#4cc9f0"
 
-# NEW: one color per category
 CATEGORY_COLORS = {
     "Vocabulary": "#4cc9f0",
     "Key expressions": "#f72585",
@@ -16,6 +16,10 @@ CATEGORY_COLORS = {
     "Culture": "#90be6d",
 }
 DEFAULT_CATEGORY_COLOR = "#a0a0a0"
+
+# NEW: how likely a card is to be drawn, depending on its status
+STATUS_WEIGHTS = {"review": 5, "new": 3, "known": 1}
+STATUS_LABELS = {"review": "To review", "new": "New", "known": "Known"}
 
 
 def load_cards():
@@ -28,7 +32,34 @@ def load_cards():
     return all_cards
 
 
+# NEW: progress helpers
+def load_progress():
+    try:
+        return json.loads(PROGRESS_FILE.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+
+def save_progress():
+    PROGRESS_FILE.write_text(json.dumps(progress, ensure_ascii=False, indent=2),
+                             encoding="utf-8")
+
+
+def card_id(card):
+    return f'{card["category"]}:{card["korean"]}'
+
+
+def get_status(card):
+    return progress.get(card_id(card), "new")
+
+
+def set_status(card, status):
+    progress[card_id(card)] = status
+    save_progress()
+
+
 cards = load_cards()
+progress = load_progress()  
 current = None
 
 root = tk.Tk()
@@ -38,7 +69,6 @@ root.attributes("-topmost", True)    # always on top
 root.configure(bg=BG)
 root.geometry("+40+40")              # screen position
 
-# NEW: category label, packed BEFORE the other labels so it sits on top
 category_label = tk.Label(root, font=("Helvetica", 10, "bold"), bg=BG)
 category_label.pack(padx=20, pady=(10, 0))
 
@@ -51,7 +81,11 @@ for label in (korean_label, romanization_label, meaning_label):
 
 def next_word():
     global current
-    current = random.choice(cards)
+    # NEW: weighted draw, avoiding the same card twice in a row
+    pool = [c for c in cards if c is not current] or cards
+    weights = [STATUS_WEIGHTS[get_status(c)] for c in pool]
+    current = random.choices(pool, weights=weights, k=1)[0]
+
     category = current.get("category", "")
     category_label.config(text=category.upper(),
                           fg=CATEGORY_COLORS.get(category, DEFAULT_CATEGORY_COLOR))
@@ -79,18 +113,21 @@ def open_lesson(_event=None):
     win.attributes("-topmost", True)
     win.bind("<Escape>", lambda e: win.destroy())
 
-    # NEW: category badge at the top of the card
     category = card.get("category", "")
     if category:
         color = CATEGORY_COLORS.get(category, DEFAULT_CATEGORY_COLOR)
         tk.Label(win, text=category.upper(), font=("Helvetica", 11, "bold"),
                  fg=BG, bg=color, padx=12, pady=3).pack(pady=(20, 0))
 
-    # Header (pady changed from (20, 0) to (10, 0))
+    # Header
     tk.Label(win, text=card["korean"], font=("Apple SD Gothic Neo", 40, "bold"),
              fg="white", bg=BG).pack(padx=30, pady=(10, 0))
     tk.Label(win, text=f'{card["romanization"]}  ·  {card["meaning"]}',
              font=("Helvetica", 16), fg=ACCENT, bg=BG).pack(pady=(0, 5))
+
+    # NEW: current status
+    tk.Label(win, text=f"Status: {STATUS_LABELS[get_status(card)]}",
+             font=("Helvetica", 11), fg="gray", bg=BG).pack()
 
     # Explanation section
     if card.get("explanation"):
@@ -113,7 +150,16 @@ def open_lesson(_event=None):
         tk.Label(win, text=card["tip"], font=("Helvetica", 14), fg="white",
                  bg=BG, wraplength=420, justify="left").pack(padx=30, pady=(8, 0), anchor="w")
 
-    tk.Button(win, text="Close (Esc)", command=win.destroy).pack(pady=20)
+    # NEW: Known / To review buttons
+    def mark(status):
+        set_status(card, status)
+        win.destroy()
+
+    buttons = tk.Frame(win, bg=BG)
+    buttons.pack(pady=20)
+    tk.Button(buttons, text="✓ Known", command=lambda: mark("known")).pack(side="left", padx=5)
+    tk.Button(buttons, text="↻ To review", command=lambda: mark("review")).pack(side="left", padx=5)
+    tk.Button(buttons, text="Close (Esc)", command=win.destroy).pack(side="left", padx=5)
 
 
 menu = tk.Menu(root, tearoff=0)

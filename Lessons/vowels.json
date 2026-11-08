@@ -1,0 +1,40 @@
+[
+  {
+    "category": "vowels 1",
+    "korean": "ㅏ",
+    "romanization": "a",
+    "meaning": "vowel",
+    "explanation": "Sounds like a /a/"
+  },
+  {
+    "category": "vowels 1",
+    "korean": "ㅓ",
+    "romanization": "eo",
+    "meaning": "vowel",
+    "explanation": "Sounds like a /eo/",
+    "examples": [
+      { "korean": "서울", "pronunciation": "S/eo/ul" }
+    ]
+  },
+  {
+    "category": "vowels 1",
+    "korean": "ㅗ",
+    "romanization": "o",
+    "meaning": "vowel",
+    "explanation": "Sounds like a /o/"
+  },
+  {
+    "category": "vowels 1",
+    "korean": "ㅜ",
+    "romanization": "u",
+    "meaning": "vowel",
+    "explanation": "Sounds like a /u/ (in french : 'ou')"
+  },
+  {
+    "category": "vowels 1",
+    "korean": "ㅡ",
+    "romanization": "eu",
+    "meaning": "vowel",
+    "explanation": "Sounds like a /eu/"
+  }
+]

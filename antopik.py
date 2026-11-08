@@ -38,6 +38,12 @@ def schedule_refresh():
     root.after(REFRESH_INTERVAL_MS, schedule_refresh)
 
 
+def section_title(parent, text):
+    tk.Label(parent, text=text.upper(), font=("Helvetica", 11, "bold"),
+             fg=ACCENT, bg=BG).pack(padx=30, pady=(18, 2), anchor="w")
+    tk.Frame(parent, bg=ACCENT, height=1).pack(padx=30, fill="x")
+
+
 def open_lesson(_event=None):
     card = current
     win = tk.Toplevel(root)
@@ -46,21 +52,34 @@ def open_lesson(_event=None):
     win.attributes("-topmost", True)
     win.bind("<Escape>", lambda e: win.destroy())
 
+    # Header
     tk.Label(win, text=card["korean"], font=("Apple SD Gothic Neo", 40, "bold"),
              fg="white", bg=BG).pack(padx=30, pady=(20, 0))
     tk.Label(win, text=f'{card["romanization"]}  ·  {card["meaning"]}',
-             font=("Helvetica", 16), fg=ACCENT, bg=BG).pack(pady=(0, 10))
-    tk.Label(win, text=card.get("lesson", ""), font=("Helvetica", 14), fg="white",
-             bg=BG, wraplength=420, justify="left").pack(padx=30, pady=10)
+             font=("Helvetica", 16), fg=ACCENT, bg=BG).pack(pady=(0, 5))
 
-    for example in card.get("examples", []):
-        tk.Label(win, text=example["korean"], font=("Apple SD Gothic Neo", 18),
-                 fg="white", bg=BG).pack(padx=30, anchor="w")
-        tk.Label(win, text=example["english"], font=("Helvetica", 12, "italic"),
-                 fg="gray", bg=BG).pack(padx=30, pady=(0, 8), anchor="w")
+    # Explanation section
+    if card.get("explanation"):
+        section_title(win, "Explanation")
+        tk.Label(win, text=card["explanation"], font=("Helvetica", 14), fg="white",
+                 bg=BG, wraplength=420, justify="left").pack(padx=30, pady=(8, 0), anchor="w")
 
-    tk.Button(win, text="Close (Esc)", command=win.destroy).pack(pady=15)
+    # Examples section
+    if card.get("examples"):
+        section_title(win, "Examples")
+        for example in card["examples"]:
+            tk.Label(win, text=example["korean"], font=("Apple SD Gothic Neo", 18),
+                     fg="white", bg=BG).pack(padx=30, pady=(8, 0), anchor="w")
+            tk.Label(win, text=example["english"], font=("Helvetica", 12, "italic"),
+                     fg="gray", bg=BG).pack(padx=30, anchor="w")
 
+    # Tip section (optional)
+    if card.get("tip"):
+        section_title(win, "Memory tip")
+        tk.Label(win, text=card["tip"], font=("Helvetica", 14), fg="white",
+                 bg=BG, wraplength=420, justify="left").pack(padx=30, pady=(8, 0), anchor="w")
+
+    tk.Button(win, text="Close (Esc)", command=win.destroy).pack(pady=20)
 
 menu = tk.Menu(root, tearoff=0)
 menu.add_command(label="Next word", command=next_word)

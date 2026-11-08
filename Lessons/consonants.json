@@ -2,12 +2,103 @@
   {
     "category": "consonants 1",
     "korean": "ㄱ",
-    "romanization": "k/g",
+    "romanization": "g/k",
     "meaning": "consonant",
     "explanation": "Sounds like a /g/ at the start of a syllable and like a /k/ at the end if the next letter isn't a vowel",
     "examples": [
-      { "korean": "한곡", "pronunciation": "Hangu/k/" },
-      { "korean": "한곡어", "pronunciation": "Hangu/g/eo" }
+      { "korean": "한곡", "pronunciation": "hangu/k/ (Korea)" },
+      { "korean": "한곡어", "pronunciation": "hangu/g/eo (Korean language)" }
     ]
+  },
+  {
+    "category": "consonants 1",
+    "korean": "ㄴ",
+    "romanization": "n",
+    "meaning": "consonant",
+    "explanation": "Sounds like a /n/",
+    "examples": [
+      { "korean": "나무", "pronunciation": "/n/amu (tree)" },
+      { "korean": "만", "pronunciation": "ma/n/ (10.000)" }
+    ]
+  },
+  {
+    "category": "consonants 1",
+    "korean": "ㄷ",
+    "romanization": "d/t",
+    "meaning": "consonant",
+    "explanation": "Sounds like a /d/ at the start of a syllable and like a /t/ at the end if the next letter isn't a vowel",
+    "examples": [
+      { "korean": "감사합니다", "pronunciation": "gamsahamni/d/a (thank you)" },
+      { "korean": "곧", "pronunciation": "go/t/ (soon)" },
+      { "korean": "닫아요", "pronunciation": "/d/a/d/ayo (I'm closing)" }
+    ]
+  },
+  {
+    "category": "consonants 1",
+    "korean": "ㄹ",
+    "romanization": "r/l",
+    "meaning": "consonant",
+    "explanation": "Sounds like a /r/ (not the french /r/ but like the /r/ in the spanish word pero) at the start of a syllable and like a /l/ at the end if the next letter isn't a vowel",
+    "examples": [
+      { "korean": "라면", "pronunciation": "/r/amyeon (noodles)" },
+      { "korean": "사랑", "pronunciation": "sa/r/ang (love)" }, 
+      { "korean": "물", "pronunciation": "mu/l/ (water)" },
+      { "korean": "물이", "pronunciation": "mu/r/i (water ...)" }
+    ]
+  },
+  {
+    "category": "consonants 1",
+    "korean": "ㅁ",
+    "romanization": "m",
+    "meaning": "consonant",
+    "explanation": "Sounds like a /m/",
+    "examples": [
+      { "korean": "물", "pronunciation": "/m/ul (water)" },
+      { "korean": "감사합니다", "pronunciation": "ga/m/saha/m/nida (thank you)" }
+    ]
+  },
+  {
+    "category": "consonants 1",
+    "korean": "ㅂ",
+    "romanization": "b/p",
+    "meaning": "consonant",
+    "explanation": "Sounds like a /b/ at the start of a syllable and like a /p/ at the end if the next letter isn't a vowel",
+    "examples": [
+      { "korean": "비빔밥", "pronunciation": "/b/i/b/im/b/a/p/ (mixed rice, traditional korean meal)" }
+    ]
+  },
+  {
+    "category": "consonants 1",
+    "korean": "ㅅ",
+    "romanization": "s",
+    "meaning": "consonant",
+    "explanation": "Sounds like a /s/ or a /s(h)/ before a /i/ sound  (the romanization write /si/ and not /shi/)",
+    "examples": [
+      { "korean": "사람", "pronunciation": "saram (person)" },
+      { "korean": "시간", "pronunciation": "/s/igan (time)" }
+    ]
+  },
+  {
+    "category": "consonants 1",
+    "korean": "ㅇ",
+    "romanization": "ø/ng",
+    "meaning": "consonant",
+    "explanation": "No sounds at the start of a syllable or /ng/ at the end",
+    "examples": [
+      { "korean": "안녕", "pronunciation": "/ø/annyeo/ng/ (hi)" }
+    ]
+  },
+  {
+    "category": "consonants 1",
+    "korean": "ㅈ",
+    "romanization": "j/t",
+    "meaning": "consonant",
+    "explanation": "Sounds like a /j/ at the start of a syllable and like a /t/ at the end if the next letter isn't a vowel",
+    "examples": [
+      { "korean": "집", "pronunciation": "/j/ip (house)" },
+      { "korean": "낮", "pronunciation": "na/t/ (day)" },
+      { "korean": "낮이", "pronunciation": "na/j/i (day...)" }
+    ],
+    "tip" : "/j/ is pronunced 'dj'"
   }
 ]

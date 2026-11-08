@@ -36,5 +36,27 @@
     "romanization": "eu",
     "meaning": "vowel",
     "explanation": "Sounds like a /eu/"
+  },
+  {
+    "category": "vowels 2",
+    "korean": "ㅔ/ㅐ",
+    "romanization": "e/ae",
+    "meaning": "vowel",
+    "explanation": "It's theorically not the same song (like the é and è in french) but today it's hard to really hear a difference between the two.\n\nTo know which one to use in a word : you just have to know :)",
+    "examples": [
+      { "korean": "게구리", "pronunciation": "g/e/guri (frog)" },
+      { "korean": "대구", "pronunciation": "D/ae/gu" }
+    ]
+  },
+  {
+    "category": "vowels 2",
+    "korean": "ㅔ/ㅐ",
+    "romanization": "e/ae",
+    "meaning": "vowel",
+    "explanation": "It's theorically not the same song (like the é and è in french) but today it's hard to really hear a difference between the two.\n\nTo know which one to use in a word : you just have to know :)",
+    "examples": [
+      { "korean": "게구리", "pronunciation": "g/e/guri (frog)" },
+      { "korean": "대구", "pronunciation": "D/ae/gu" }
+    ]
   }
 ]

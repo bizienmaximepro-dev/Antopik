@@ -1,0 +1,34 @@
+TODO LIST
+
+--- Lessons --- 
+Lessons/consonants and Lessons/vowels kept for later, as it is things I already know and a bit long to write
+
+--- AnTopik tool --- 
+# Help Learning 
+
+- [x] Known / To review buttons on the card. Save progress in a progress.json, and draw “to review” cards more often. This turns the widget into a real spaced-repetition tool.
+
+- [ ] Pronunciation button : Use the built-in MacOS Korean voice to help me with pronunciation.
+
+- [ ] Mini quiz mode : Show the Korean word, hide the meaning, and click to reveal it.
+
+- [ ] Exam mode : Several cards back-to-back with a hidden meaning, I have to write the meaning by myself. 
+
+- [ ] English to Korean mode : Combine with the Exam mode. I have to write the word in Korean based on the English word.
+
+- [ ] Level field ("topik_level": 1) so you can filter cards by TOPIK level.
+
+# Widget comfort
+
+- [ ] Category filter in the right-click menu (only Grammar today, for example).
+
+- [ ] Remember the widget position between launches (save x/y in a small config file).
+
+- [ ] Launch at login, so the widget is there every morning.
+
+# GitHub quality : 
+
+- [x] A README.md with a screenshot or GIF, the features, and the run command.
+- [x] A .gitignore.
+- [ ] Splitting the code into modules for maintenance.
+- [ ] A few unit tests on the card loading (pytest), for example to check that an invalid .json file gives a clear error message instead of a crash.

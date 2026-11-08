@@ -1,0 +1,13 @@
+[
+  {
+    "category": "consonants 1",
+    "korean": "ㄱ",
+    "romanization": "k/g",
+    "meaning": "consonant",
+    "explanation": "Sounds like a /g/ at the start of a syllable and like a /k/ at the end if the next letter isn't a vowel",
+    "examples": [
+      { "korean": "한곡", "pronunciation": "Hangu/k/" },
+      { "korean": "한곡어", "pronunciation": "Hangu/g/eo" }
+    ]
+  }
+]

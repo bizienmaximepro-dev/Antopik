@@ -100,5 +100,16 @@
       { "korean": "낮이", "pronunciation": "na/j/i (day...)" }
     ],
     "tip" : "/j/ is pronunced 'dj'"
+  },
+  {
+    "category": "consonants 1",
+    "korean": "ㅎ",
+    "romanization": "h",
+    "meaning": "consonant",
+    "explanation": "Sounds like a /h/",
+    "examples": [
+      { "korean": "감사합니다", "pronunciation": "gamsa/h/amnida (thank you)" }
+    ],
+    "tip" : "/j/ is pronunced 'dj'"
   }
 ]

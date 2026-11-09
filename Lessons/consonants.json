@@ -110,5 +110,18 @@
     "examples": [
       { "korean": "감사합니다", "pronunciation": "gamsa/h/amnida (thank you)" }
     ]
+  },
+  {
+    "category": "Nasalisation",
+    "korean": "ㄱ / ㄷ / ㅂ",
+    "romanization": "ㅇ / ㄴ / ㅁ",
+    "meaning": "lesson",
+    "explanation": "When a final consonant meets a nasal consonant (ㄴ or ㅁ) right after it, it turns into a nasal too",
+    "examples": [
+      { "korean": "감사합니다", "pronunciation": "gamsaha(m)nida (thank you)" },
+      { "korean": "한국말", "pronunciation": "hangungmal" },
+      { "korean": "닫는다", "pronunciation": "danneunda" }
+    ]
   }
+  
 ]

@@ -6,8 +6,8 @@
     "meaning": "consonant",
     "explanation": "Sounds like a /g/ at the start of a syllable and like a /k/ at the end if the next letter isn't a vowel",
     "examples": [
-      { "korean": "한곡", "pronunciation": "hangu/k/ (Korea)" },
-      { "korean": "한곡어", "pronunciation": "hangu/g/eo (Korean language)" }
+      { "korean": "한국", "pronunciation": "hangu/k/ (Korea)" },
+      { "korean": "한국어", "pronunciation": "hangu/g/eo (Korean language)" }
     ]
   },
   {
@@ -109,7 +109,6 @@
     "explanation": "Sounds like a /h/",
     "examples": [
       { "korean": "감사합니다", "pronunciation": "gamsa/h/amnida (thank you)" }
-    ],
-    "tip" : "/j/ is pronunced 'dj'"
+    ]
   }
 ]

@@ -1,23 +1,26 @@
 [
   {
-    "category": "Vocabulary",
-    "korean": "물",
-    "romanization": "mul",
-    "meaning": "water",
-    "explanation": "Basic, very common word. It combines with other nouns: 물고기 (fish, literally 'water-animal').",
+    "category": "Key expression",
+    "korean": "저는 N+이에요/예요",
+    "romanization": "jeoneun N+ieyo/yeyo",
+    "meaning": "I am N",
+    "explanation": "Used to introduce yourself",
     "examples": [
-      { "korean": "물 주세요", "english": "Water, please" },
-      { "korean": "물을 마셔요", "english": "I drink water" }
-    ]
+      { "korean": "저는 멕심이에요", "english": "I am Maxime" },
+      { "korean": "저는 로라예요", "english": "I am Lola" }
+    ],
+    "tip" : "Use 이에요 when the word before ends by a consonant.\nUse 예요 when the word beofre ends with a vowel."
   },
   {
-    "category": "Vocabulary",
-    "korean": "학교",
-    "romanization": "hakgyo",
-    "meaning": "school",
-    "explanation": "Sino-Korean word: 학 (study) + 교 (teaching). The suffix 교 appears in many words related to education.",
+    "category": "Key expression",
+    "korean": "저는 N+이에요/예요",
+    "romanization": "jeoneun N+ieyo/yeyo",
+    "meaning": "I am N",
+    "explanation": "Used to introduce yourself",
     "examples": [
-      { "korean": "학교에 가요", "english": "I go to school" }
-    ]
+      { "korean": "저는 멕심이에요", "english": "I am Maxime" },
+      { "korean": "저는 로라예요", "english": "I am Lola" }
+    ],
+    "tip" : "Use 이에요 when the word before ends by a consonant.\nUse 예요 when the word beofre ends with a vowel."
   }
 ]

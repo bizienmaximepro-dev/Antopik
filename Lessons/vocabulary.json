@@ -19,5 +19,29 @@
     "examples": [
       { "korean": "학교에 가요", "english": "I go to school" }
     ]
+  },
+  {
+    "category": "Introducing yourself",
+    "korean": "이름",
+    "romanization": "ireum",
+    "meaning": "name",
+    "explanation": "Used to ask the name of someone for exemple.",
+    "examples": [
+      { "korean": "이르이 뫄예요?", "english": "What's your name?" },
+      { "korean": "이르 소개하기", "english": "Introducing your name." }
+    ]
+  },
+  {
+    "category": "Introducing yourself",
+    "korean": "사람",
+    "romanization": "saram",
+    "meaning": "person",
+    "explanation": "Can be combined with a country to say that you are from this country",
+    "examples": [
+      { "korean": "어느 나라 사람이에요?", "english": "Where are you from?" },
+      { "korean": "저는 프랑스 사람이에요", "english": "I'm French" },
+      { "korean": "저는 한국 사람이에요", "english": "I'm Korean" }
+    ]
   }
+
 ]

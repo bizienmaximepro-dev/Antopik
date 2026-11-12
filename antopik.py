@@ -5,7 +5,7 @@ from pathlib import Path
 
 LESSONS_DIR = Path(__file__).parent / "lessons"
 PROGRESS_FILE = Path(__file__).parent / "progress.json"  
-REFRESH_INTERVAL_MS = 60 * 60 * 1000  # 1 hour
+REFRESH_INTERVAL_MS = 10 * 60 * 1000  # 10min 
 BG = "#1c1c1e"
 ACCENT = "#4cc9f0"
 
@@ -19,8 +19,7 @@ DEFAULT_CATEGORY_COLOR = "#a0a0a0"
 
 # How likely a card is to be drawn, depending on its status
 STATUS_WEIGHTS = {"review": 5, "new": 3, "known": 1}
-STATUS_LABELS = {"review": "To review", "new": "New", "known": "Known"}
-
+STATUS_LABELS = {"review": "To review", "new": "New", "known": "Known", "hidden": "Hidden"}
 
 def load_cards():
     all_cards = []
@@ -81,8 +80,16 @@ for label in (korean_label, romanization_label, meaning_label):
 
 def next_word():
     global current
+    visible = [c for c in cards if get_status(c) != "hidden"]
+    if not visible:
+        category_label.config(text="")
+        korean_label.config(text="No cards left")
+        romanization_label.config(text="")
+        meaning_label.config(text="Right-click → Restore hidden cards")
+        return
+
     # Weighted draw, avoiding the same card twice in a row
-    pool = [c for c in cards if c is not current] or cards
+    pool = [c for c in visible if c is not current] or visible
     weights = [STATUS_WEIGHTS[get_status(c)] for c in pool]
     current = random.choices(pool, weights=weights, k=1)[0]
 
@@ -154,20 +161,29 @@ def open_lesson(_event=None):
         tk.Label(win, text=card["tip"], font=("Helvetica", 14), fg="white",
                  bg=BG, wraplength=420, justify="left").pack(padx=30, pady=(8, 0), anchor="w")
 
-    # Known / To review buttons
+    # Known / To review / Hide buttons
     def mark(status):
         set_status(card, status)
         win.destroy()
+        if status == "hidden":
+            next_word()
 
     buttons = tk.Frame(win, bg=BG)
     buttons.pack(pady=20)
     tk.Button(buttons, text="✓ Known", command=lambda: mark("known")).pack(side="left", padx=5)
     tk.Button(buttons, text="↻ To review", command=lambda: mark("review")).pack(side="left", padx=5)
+    tk.Button(buttons, text="✗ Hide", command=lambda: mark("hidden")).pack(side="left", padx=5)
     tk.Button(buttons, text="Close (Esc)", command=win.destroy).pack(side="left", padx=5)
 
+def restore_hidden():
+    for key in [k for k, v in progress.items() if v == "hidden"]:
+        del progress[key]  # back to "new"
+    save_progress()
+    next_word()
 
 menu = tk.Menu(root, tearoff=0)
 menu.add_command(label="Next word", command=next_word)
+menu.add_command(label="Restore hidden cards", command=restore_hidden)
 menu.add_command(label="Quit", command=root.destroy)
 
 

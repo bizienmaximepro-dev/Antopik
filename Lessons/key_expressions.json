@@ -9,18 +9,17 @@
       { "korean": "저는 멕심이에요", "english": "I am Maxime" },
       { "korean": "저는 로라예요", "english": "I am Lola" }
     ],
-    "tip" : "Use 이에요 when the word before ends by a consonant.\nUse 예요 when the word beofre ends with a vowel."
+    "tip" : "Use 이에요 when the word before ends by a consonant.\nUse 예요 when the word beofre ends with a vowel.\nN may be names, nationalities and jobs."
   },
   {
     "category": "Key expression",
-    "korean": "저는 N+이에요/예요",
-    "romanization": "jeoneun N+ieyo/yeyo",
-    "meaning": "I am N",
-    "explanation": "Used to introduce yourself",
+    "korean": "씨",
+    "romanization": "shi",
+    "meaning": "Mr, Miss, Mrs",
+    "explanation": "Term of adress that can be added at the end of someone's name.",
     "examples": [
-      { "korean": "저는 멕심이에요", "english": "I am Maxime" },
-      { "korean": "저는 로라예요", "english": "I am Lola" }
+      { "korean": "맥심 씨", "english": "(adressed to) Maxime" }
     ],
-    "tip" : "Use 이에요 when the word before ends by a consonant.\nUse 예요 when the word beofre ends with a vowel."
+    "tip" : "Can be used with either first name or full name but impolite to use with the last name only."
   }
 ]

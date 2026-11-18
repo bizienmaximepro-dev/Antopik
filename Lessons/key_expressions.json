@@ -1,6 +1,6 @@
 [
   {
-    "category": "Key expression",
+    "category": "Introducing yourself",
     "korean": "저는 N+이에요/예요",
     "romanization": "jeoneun N+ieyo/yeyo",
     "meaning": "I am N",
@@ -12,7 +12,7 @@
     "tip" : "Use 이에요 when the word before ends by a consonant.\nUse 예요 when the word beofre ends with a vowel.\nN may be names, nationalities and jobs."
   },
   {
-    "category": "Key expression",
+    "category": "Introducing yourself",
     "korean": "씨",
     "romanization": "shi",
     "meaning": "Mr, Miss, Mrs",
@@ -23,14 +23,25 @@
     "tip" : "Can be used with either first name or full name but impolite to use with the last name only."
   },
   {
-    "category": "Key expression",
+    "category": "Introducing yourself",
     "korean": "반가워요",
     "romanization": "Bangawoyo",
     "meaning": "Nice to meet you",
     "explanation": "Used when meeting someone for the first time.",
     "examples": [
       { "korean": "반가워요, 맥심 씨", "english": "Nice to meet you, Maxime" }
-    ],
-    "tip" : "Can say 만나서 반가워요"
+    ]
+  },
+  {
+    "category": "Introducing another person",
+    "korean": "N+은/는",
+    "romanization": "N+eun/neun",
+    "meaning": "None",
+    "explanation": "은/는 is a particle attached to the noun that is the topic of the sentence.",
+    "examples": [
+      { "korean": "멕심씨는 학생이에요", "english": "Maxime is a student" },
+      { "korean": "이쪽은 (or 여기) ... 이에요/예요.", "english": "This person (or here) is ..." },
+      { "korean": "이분은... 이에요/예요.", "english": "This person (honorific form) is ..." }
+    ]
   }
 ]

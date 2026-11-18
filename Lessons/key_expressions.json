@@ -21,5 +21,16 @@
       { "korean": "맥심 씨", "english": "(adressed to) Maxime" }
     ],
     "tip" : "Can be used with either first name or full name but impolite to use with the last name only."
+  },
+  {
+    "category": "Key expression",
+    "korean": "반가워요",
+    "romanization": "Bangawoyo",
+    "meaning": "Nice to meet you",
+    "explanation": "Used when meeting someone for the first time.",
+    "examples": [
+      { "korean": "반가워요, 맥심 씨", "english": "Nice to meet you, Maxime" }
+    ],
+    "tip" : "Can say 만나서 반가워요"
   }
 ]

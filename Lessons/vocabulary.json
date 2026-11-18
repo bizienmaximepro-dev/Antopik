@@ -42,6 +42,67 @@
       { "korean": "저는 프랑스 사람이에요", "english": "I'm French" },
       { "korean": "저는 한국 사람이에요", "english": "I'm Korean" }
     ]
+  },
+  {
+    "category": "Introducing another person : Jobs",
+    "korean": "직업",
+    "romanization": "jigeop",
+    "meaning": "Job",
+    "explanation": "Can be used to ask what someone does for a living.",
+    "examples": [
+      { "korean": "직업이 뭐여요? ", "english": "What do you do for a living?" },
+      { "korean": "저는 (job) 이에요/예요", "english": "I am a (job)" }
+    ]
+  },
+  {
+    "category": "Jobs",
+    "korean": "의사",
+    "romanization": "uisa",
+    "meaning": "Doctor",
+    "explanation": "The job 'doctor'.",
+    "examples": [
+      { "korean": "저는 의사예요", "english": "I am a doctor" }
+    ]
+  },
+  {
+    "category": "Jobs",
+    "korean": "요리사",
+    "romanization": "yorisa",
+    "meaning": "A cook",
+    "explanation": "The job 'cook'.",
+    "examples": [
+      { "korean": "저는 요리사예요", "english": "I am a cook" }
+    ]
+  },
+  {
+    "category": "Jobs",
+    "korean": "학생",
+    "romanization": "hakseng",
+    "meaning": "Student",
+    "explanation": "",
+    "examples": [
+      { "korean": "저는 학생이에요", "english": "I am a student" }
+    ]
+  },
+    {
+    "category": "Jobs",
+    "korean": "선생님",
+    "romanization": "seonsengnim",
+    "meaning": "Teacher",
+    "explanation": "",
+    "examples": [
+      { "korean": "저는 선생님이에요", "english": "I am a cook" }
+    ]
+  },
+    {
+    "category": "Jobs",
+    "korean": "가수",
+    "romanization": "gasu",
+    "meaning": "Singer",
+    "explanation": "",
+    "examples": [
+      { "korean": "저는 가수예요", "english": "I am a singer" }
+    ]
   }
 
 ]
